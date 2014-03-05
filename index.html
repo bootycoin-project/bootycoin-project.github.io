@@ -16,6 +16,56 @@
     ga('send', 'pageview');
 
   </script>
+  
+  <style>
+  .myButton {
+  	-moz-box-shadow:inset 0px 1px 0px 0px #f5978e;
+  	-webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;
+  	box-shadow:inset 0px 1px 0px 0px #f5978e;
+  	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f));
+  	background:-moz-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+  	background:-webkit-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+  	background:-o-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+  	background:-ms-linear-gradient(top, #f24537 5%, #c62d1f 100%);
+  	background:linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+  	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f',GradientType=0);
+  	background-color:#f24537;
+  	-moz-border-radius:6px;
+  	-webkit-border-radius:6px;
+  	border-radius:6px;
+  	border:1px solid #d02718;
+  	display:inline-block;
+  	cursor:pointer;
+  	color:#ffffff;
+  	font-family:arial;
+  	font-size:1.3em;
+  	font-weight:bold;
+  	padding:6px 24px;
+  	text-decoration:none;
+  	text-shadow:0px 1px 0px #810e05;
+  }
+  .myButton:hover {
+  	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
+  	background:-moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+  	background:-webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+  	background:-o-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+  	background:-ms-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+  	background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+  	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537',GradientType=0);
+  	background-color:#c62d1f;
+  }
+  .myButton:active {
+  	position:relative;
+  	top:1px;
+  }
+  </style>
+  <script type="text/javascript">  
+      function submitOnEnter(inputElement, event) {  
+          if (event.keyCode == 13) { 
+              inputElement.form.submit();  
+          }  
+      }  
+  </script> 
 </head>
 <body style='background-color: black; min-width: 950px; font-size: 1.2em; font: 400 20px/1.3 "Oleo Script", Helvetica, sans-serif;' >
   <div style='padding-left: 180px;'>
@@ -38,7 +88,7 @@
 	       <li>Havin' easy cross promotion programs with other BootyCoin merchants</li>
 	       <li>Havin' easy shopping bag integration</li>
 	       <li>Supportin' microtransactions (fractions of cents)</li>
-	       <li>Low transaction fees</li>
+	       <li>Havin' low transaction fees</li>
 		   <li>Approved merchants be gettin' some BootyCoin at launch</li>
 	     </ul>
 	     </div>
@@ -48,11 +98,15 @@
 	 <p style='color: white; text-align: center; font-size: 1.2em;'>
 	 Give us yer e-mail and we might let ya in...
 	 </p>
-	 <form action="http://getsimpleform.com/messages?form_api_token=400193cda5fb5aa57c47dc9896fa2c6e" method="post">
+	 <form id='getsome' action="http://getsimpleform.com/messages?form_api_token=400193cda5fb5aa57c47dc9896fa2c6e" method="post">
 	   <input type='hidden' name='redirect_to' value='http://www.bootycoin.com/thankyou.html' />
-	   <input type='text' name='email' style='font-size: 1.3em; margin-bottom: 15px;'/><br/>
-	   <input type="submit" value="Arrr.. let me in!" style='font-size: 1.1em; background-color: green;' name="subscribe" class="button" >	     	 
+	   <input type='text' name='email' onkeypress='submitOnEnter(this, event);' style='font-size: 1.3em; margin-bottom: 15px;'/><br/>
+	   <a href="#" class="myButton" onClick='document.forms["getsome"].submit(); return false;'>Arrr... let me in!</a>
 	 </form>
+	 <p style='padding-top: 50px;'>		 
+	 Got somethin on yer mind? Wanna get involved? Email if ya hafta: <a href='mailto:getsome@bootycoin.org' style='color: red;'>getsome@bootycoin.org</a>
+	 </p>
+	 
  </div>
 </body>
 </html>
